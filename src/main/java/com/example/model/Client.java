@@ -1,6 +1,11 @@
 package com.example.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "CLIENTS")
@@ -13,6 +18,19 @@ public class Client {
     private String nazwisko;
     private String adres;
     private String nrTel;
+
+
+    @OneToMany(mappedBy = "client", orphanRemoval = true)
+    @OrderBy("id DESC")
+    private List<BookOrder> bookOrders = new ArrayList<>();
+
+    public List<BookOrder> getOrders() {
+        return bookOrders;
+    }
+
+    public void setOrders(List<BookOrder> bookOrders) {
+        this.bookOrders = bookOrders;
+    }
 
     public Client() {}
 
