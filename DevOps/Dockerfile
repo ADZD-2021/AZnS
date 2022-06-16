@@ -1,7 +1,5 @@
 FROM ubuntu:20.04
 
-ARG binary_name
-
 RUN apt-get update && \
     apt-get install sudo -y && \
     apt-get install -y software-properties-common && \
@@ -17,9 +15,10 @@ RUN apt-get update && \
 
 # RUN chmod +x {{ binary_name }}.war
 RUN git clone https://github.com/ADZD-2021/AZnS.git
-RUN cd AZnS/ && git checkout devops_dev && cd DevOps/ && chmod +x startup.sh
+RUN cd AZnS/ && git checkout devops_dev && git pull && cd DevOps/ && chmod +x startup.sh
+RUN cd AZnS/target/ && binary=$(ls | grep war) && cp $binary /AZnS/DevOps/$binary
+# COPY /AZnS/DevOps/startup.sh startup.sh
 # RUN cd DevOps/
 # RUN chmod +x startup.sh
-
-CMD exec AZnS/DevOps/startup.sh
+# CMD AZnS/DevOps/startup.sh
 # CMD sleep 10000
