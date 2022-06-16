@@ -15,7 +15,7 @@ RUN apt-get update && \
 
 # copy/download build binary
 
-RUN chmod +x {{ binary_name }}.war
-RUN chomd +x startup.sh
+# RUN chmod +x {{ binary_name }}.war
+# RUN chomd +x startup.sh
 
-CMD exec startup.sh
+# CMD exec startup.sh
