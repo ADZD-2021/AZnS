@@ -6,6 +6,6 @@
 cd /AZnS/DevOps/
 BINARY_NAME=$(ls | grep war)
 exec gosu root /bin/bash -c "
-java -jar {{ BINARY_NAME }}.war
+java -jar $BINARY_NAME
 sleep 10
 "
