@@ -19,6 +19,7 @@ RUN cd AZnS/ && git checkout devops_dev && git pull && cd DevOps/ && chmod +x st
 RUN cd AZnS/target/ && binary=$(ls | grep war) && cp $binary /AZnS/DevOps/$binary
 # ADD startup.sh startup.sh
 # RUN chmod +x startup.sh
+EXPOSE 8080
 CMD ./AZnS/DevOps/startup.sh
 # COPY /AZnS/DevOps/startup.sh startup.sh
 # RUN cd DevOps/
