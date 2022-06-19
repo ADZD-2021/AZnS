@@ -17,16 +17,16 @@ Technical requirements of the project:
 ### Example business use cases for our service
 Book:
 - possibility of extracting book data (by book ID)
- - `/books/{bookId}`
+  - `/books/{bookId}`
 - possibility of creating a new book and adding it to the books repository
- - `/books`
+  - `/books`
 
 
 Client:
 - possibility of extracting, editing and deleting client data (based on client ID)
   - `/clients/{clientId}`
 - possibility of creating a new client and adding it to the clients repository
- - `/clients`
+  - `/clients`
 
 
 Order:
