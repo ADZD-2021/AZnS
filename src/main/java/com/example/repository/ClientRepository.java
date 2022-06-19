@@ -1,8 +1,7 @@
 package com.example.repository;
 
 import com.example.model.Client;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ClientRepository extends CrudRepository<Client, Long> {
-    Client findById(long id);
+public interface ClientRepository extends JpaRepository<Client, Long> {
 }

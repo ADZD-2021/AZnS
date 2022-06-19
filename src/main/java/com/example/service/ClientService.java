@@ -18,8 +18,28 @@ public class ClientService {
     }
 
     public Client getClientById(long clientId) {
-        Client client = clientRepository.findById(clientId);
+        Client client = clientRepository.findById(clientId).get();
         return client;
+    }
+
+    public Client createClient(Client client){
+        return clientRepository.save(client);
+    }
+
+    public Client editClient(long clientId, Client newClient){
+        return clientRepository.findById(clientId).map(
+            client -> {
+                client.setAdres(newClient.getAdres());
+                client.setImie(newClient.getImie());
+                client.setNazwisko(newClient.getNazwisko());
+                client.setNrTel(newClient.getNrTel());
+                return clientRepository.save(client);
+            }
+        ).get();
+    }
+
+    public void deleteClient(long clientId){
+        clientRepository.deleteById(clientId);
     }
 
     @PostConstruct
