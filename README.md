@@ -6,14 +6,6 @@ Our system/service is designed for simplifying the book ordering process in any 
 
 ## Description
 
-### Requirements
-Technical requirements of the project:
-- possibility to configure connection to the database from xml / json file
-- activity to the database realized by plan java jdbc or spring jdbc template or spring jpa data
-- all 'business' guidelines are to be available through REST api
-
----
-
 ### Example business use cases for our service
 Book:
 - possibility of extracting book data (by book ID)
