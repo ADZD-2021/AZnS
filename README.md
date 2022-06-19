@@ -38,3 +38,22 @@ Order:
   - `/orders/{orderId}/inprogress`
 - possibility to sent the order
   - `/orders/{orderId}/sent`
+
+---
+
+## Docker usage
+
+This project is meant to be run in a Docker container. Therefore, we created a Dockerfile for creating image based on Ubuntu 20.04.
+There are 2 images created for 2 processor architectures that we are working on: ARM and x64. Images can be pulled from [Docker Hub](https://hub.docker.com/r/mrkf1/azns2021).
+
+How to manually create Docker image:
+
+- build project's jar file via `mvn clean package` command (this can be done in IntelliJ)
+- run Docker Desktop and in terminal/command line type `docker build -t tag -f Dockerfile .`
+- run image via `docker run -d -p 8080:8080 tag` - it's important to map 8080 Docker container's port to 8080 port on local machine, otherwise it won't be possible to connect to the service
+
+---
+
+## Testing using Postman
+
+After starting Docker container you can test different use cases using Postman - we included Postman collection file in `postman/` directory which can be imported into the program.
