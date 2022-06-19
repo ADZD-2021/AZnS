@@ -1,9 +1,9 @@
-# Online library project
+# Online bookstore project
 
 ## Overview
 
 Repo created for a final project from the subject of "Architektury Zorientowane na Serwisy", which was lead in Java.
-Our system/service is designed for simplifying the book ordering process in any library. It introduces three main Entities - Book, Client and Order - with corresponding services, JPA repositories and controllers. Code was written in Java 17, also available in Docker containers.
+Our system/service is designed for simplifying the book ordering process in an online bookstore. It introduces three main Entities - Book, Client and Order - with corresponding services, JPA repositories and controllers. Code was written in Java 17, also available in Docker containers.
 
 ## Description
 
